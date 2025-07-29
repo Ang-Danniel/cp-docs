@@ -247,17 +247,6 @@ cout << "Panjang kata: " << panjang << endl;
 
 ### Tips dan Catatan Penting
 
-!!! notes "Ukuran Array"
-    Ukuran array harus dideklarasikan dengan konstanta atau literal. Anda tidak bisa menggunakan variabel untuk ukuran array dalam deklarasi standar C++.
-    ```cpp
-    int n = 5;
-    int arr[n];  // Error di beberapa compiler
-    
-    // Gunakan konstanta
-    const int UKURAN = 5;
-    int arr[UKURAN];  // Benar
-    ```
-
 !!! warning "Bounds Checking"
     C++ tidak melakukan pengecekan batas array secara otomatis. Pastikan selalu menggunakan indeks yang valid:
     ```cpp

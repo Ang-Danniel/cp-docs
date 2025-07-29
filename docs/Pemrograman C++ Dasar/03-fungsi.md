@@ -156,7 +156,7 @@ int main() {
 Menggunakan `&` untuk mengubah nilai variabel asli:
 
 ```cpp title="Pass by Reference" linenums="1"
-void tambahSatu(int& x) {
+void tambahSatu(int &x) {
     x = x + 1;
     cout << "Dalam fungsi: " << x << endl; // Output: 6
 }
@@ -193,33 +193,6 @@ int main() {
     isiArray(data, 5, 0);   // Mengubah semua elemen jadi 0
     cetakArray(data, 5);    // Output: 0 0 0 0 0
     
-    return 0;
-}
-```
-
-### Function Overloading
-C++ memungkinkan beberapa fungsi dengan nama sama tetapi parameter berbeda:
-
-```cpp title="Function Overloading" linenums="1"
-// Fungsi untuk integer
-int maksimum(int a, int b) {
-    return (a > b) ? a : b;
-}
-
-// Fungsi untuk double
-double maksimum(double a, double b) {
-    return (a > b) ? a : b;
-}
-
-// Fungsi untuk tiga parameter
-int maksimum(int a, int b, int c) {
-    return maksimum(maksimum(a, b), c);
-}
-
-int main() {
-    cout << maksimum(5, 3) << endl;        // Memanggil int version
-    cout << maksimum(5.7, 3.2) << endl;   // Memanggil double version
-    cout << maksimum(1, 5, 3) << endl;    // Memanggil three-parameter version
     return 0;
 }
 ```
@@ -364,31 +337,6 @@ int main() {
     // Upper bound (iterator ke elemen > target)
     pos = upper_bound(arr, arr + n, 5);
     cout << "Upper bound of 5: " << pos - arr << endl;  // Index
-    
-    return 0;
-}
-```
-
-```cpp title="Other Useful Functions" linenums="1"
-#include <algorithm>
-
-int main() {
-    int arr[] = {5, 2, 8, 1, 9, 3};
-    int n = 6;
-    
-    // Reverse array
-    reverse(arr, arr + n);
-    
-    // Next permutation
-    vector<int> vec = {1, 2, 3};
-    do {
-        for (int x : vec) cout << x << " ";
-        cout << endl;
-    } while (next_permutation(vec.begin(), vec.end()));
-    
-    // Count occurrences
-    vector<int> data = {1, 2, 2, 3, 2, 4};
-    int count = count(data.begin(), data.end(), 2);  // Output: 3
     
     return 0;
 }

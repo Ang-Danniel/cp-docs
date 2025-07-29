@@ -65,15 +65,6 @@ getline(cin, kalimat);  // Membaca satu baris lengkap
 cout << "Kalimat: " << kalimat << endl;
 ```
 
-```cpp title="Kombinasi Input" linenums="1"
-int n;
-string nama;
-
-cin >> n;              // Baca integer
-cin.ignore();          // Bersihkan newline dari buffer
-getline(cin, nama);    // Baca string dengan spasi
-```
-
 #### Output String
 ```cpp title="Output String" linenums="1"
 string message = "Hello World";
@@ -149,24 +140,10 @@ cout << sub3 << endl;
 string sentence = "I love programming and programming loves me";
 
 // Mencari substring
-size_t pos = sentence.find("programming");
-if (pos != string::npos) {
-    cout << "Found at position: " << pos << endl;  // Output: 7
-}
+int pos = sentence.find("programming"); // Output: 7, pencarian akan dilakukan dari index 0 hingga menemukan kalimat yang diinginkan
 
-// Mencari dari posisi tertentu
-size_t pos2 = sentence.find("programming", pos + 1);
-if (pos2 != string::npos) {
-    cout << "Found again at: " << pos2 << endl;   // Output: 24
-}
-
-// Mencari karakter
-size_t char_pos = sentence.find('o');
-cout << "First 'o' at: " << char_pos << endl;    // Output: 5
-
-// rfind - mencari dari belakang
-size_t last_pos = sentence.rfind("programming");
-cout << "Last occurrence: " << last_pos << endl;  // Output: 24
+// Anda juga bisa mencari programming yang muncul kedua dengan memberikan argumen index dimana pencarian akan dimulai
+pos = sentence.find("programming", 8) // Pencarian akan dilakukan dari index 8 pada sentence
 ```
 
 #### Replace
