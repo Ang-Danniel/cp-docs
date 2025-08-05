@@ -352,3 +352,4 @@ int main() {
 
 !!! warning "Infinite Loop"
     Pastikan selalu menandai vertex sebagai visited **sebelum** memasukkannya ke queue/stack untuk menghindari duplicate processing.
+
