@@ -1,9 +1,9 @@
 # Berbagi Lawakan
 
 **Link Soal:** [Gemastik 17 - Problem I](https://tlx.toki.id/problems/gemastik-2017-pemrograman-final/I)  
-**Sumber:** Contest Name / Platform Name  
-**Tingkat Kesulitan:** Easy/Medium/Hard  
-**Tag:** Graph, BFS, Implementation, etc.
+**Sumber:** TROC / TLX 
+**Tingkat Kesulitan:** Hard
+**Tag:** Graph, BFS
 
 ## Overview Permasalahan
 
