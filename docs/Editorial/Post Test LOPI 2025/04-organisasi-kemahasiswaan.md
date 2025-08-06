@@ -35,21 +35,20 @@ Berapakah banyaknya mahasiswa Fasilkom UI paling sedikit yang mungkin?
     ```
     1
     7 4
-    3 3 4 5 6 7 8
+    2 3 4 5 6 7 8
     ```
 
     Contoh tabel distribusi mahasiswa ke organisasi (misal T = 8, K = 4, M = [3, 3, 4, 5, 6, 7, 8]):
 
-    | Organisasi | Mahasiswa ke-1 | Mahasiswa ke-2 | Mahasiswa ke-3 | Mahasiswa ke-4 | Mahasiswa ke-5 | Mahasiswa ke-6 | Mahasiswa ke-7 | Mahasiswa ke-8 |
-    |------------|----------------|----------------|----------------|----------------|----------------|----------------|----------------|----------------|
-    | Org ke-1   | 7              | 7              | 7              | 7              | 7              | 7              | 7              | 7              |
-    | Org ke-2   | 6              | 6              | 6              | 6              | 6              | 6              | 6              | 5              |
-    | Org ke-3   | 5              | 5              | 5              | 5              | 5              | 4              | 4              | 4              |
-    | Org ke-4   | 4              | 4              | 3              | 3              | 3              | 3              | 2              | 2              |
-    | Org ke-5   | 2              | 1              | 1              | 1              | -              | -              | -              | -              |
+    | Organisasi | Mahasiswa ke-1 | Mahasiswa ke-2 | Mahasiswa ke-3 | Mahasiswa ke-4 | Mahasiswa ke-5 | Mahasiswa ke-6 | Mahasiswa ke-7 | Mahasiswa ke-8 | Mahasiswa ke-9 |
+    |------------|----------------|----------------|----------------|----------------|----------------|----------------|----------------|----------------|----------------|
+    | Org ke-1   | 7              | 7              | 7              | 7              | 7              | 7              | 7              | 7              | 6              |
+    | Org ke-2   | 6              | 6              | 6              | 6              | 6              | 6              | 5              | 5              | 5              |
+    | Org ke-3   | 5              | 5              | 5              | 4              | 4              | 4              | 4              | 4              | 4              |
+    | Org ke-4   | 3              | 3              | 3              | 3              | 2              | 2              | 2              | 1              | 1              |
 
 
-    Dapat dilihat bahwa tidak ada mahasiswa yang organisasi nya overlap karena banyak kolom lebih dari M[i] paling maksimum.
+    Dapat dilihat bahwa tidak ada mahasiswa yang organisasi nya overlap karena banyak kolom lebih dari M[i] paling maksimum. Jadi kita cukup mencari nilai T dimana T = ceil(Sumasi(M[i]) / K) dan T harus lebih besar dari M[i] paling maksimum.
 
     - **Time Complexity:** O(1)
     - **Space Complexity:** O(1)
@@ -59,16 +58,18 @@ Berapakah banyaknya mahasiswa Fasilkom UI paling sedikit yang mungkin?
 ??? example "Implementasi"
 
     ```cpp title="Solution" linenums="8"
-    #include <iostream>
-    #include <vector>
-    // Include library yang diperlukan
-    using namespace std;
-
-    int main() {
-        // Kode solusi lengkap
-        
-        return 0;
+    ll n, k; cin >> n >> k;
+    
+    ll sum = 0;
+    ll maxx = 0;
+    for (int i = 0; i < n; i++){
+        ll temp; cin >> temp;
+        sum += temp;
+        maxx = max(maxx, temp);
     }
-    ```
 
-:3
+    ll ans = (sum / k);
+    if (sum % k != 0) ans++;
+    ans = max(maxx, ans);
+    cout << ans << endl;
+    ```

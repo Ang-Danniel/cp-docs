@@ -57,11 +57,11 @@ bool visited[MAXN];
 int n, m;
 
 // DFS untuk mengumpulkan vertex dalam satu komponen
-void dfs(int u, vector<int>& component) {
+void dfs(int u) {
     visited[u] = true;
     for (int v : adj[u]) {
         if (!visited[v]) {
-            dfs(v, component);
+            dfs(v);
         }
     }
 }
@@ -80,7 +80,7 @@ int main() {
 
     for (int i = 1; i <= n; i++) {
         if (!visited[i]) {
-            dfs(i, component);
+            dfs(i);
             ans++;
         }
     }
